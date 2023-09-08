@@ -75,20 +75,41 @@ const Board = ({ size }: Props) => {
 
     // Check for a draw (no winner, and no empty cells)
     if (!grid.flat().includes(null)) {
-        return <div className='draw'>Draw!</div>
+        return (
+            <>
+                <div className='draw'>Draw!</div>
+                <button onClick={() => setGrid(gridArray)}>Play Again?</button>
+            </>
+        )
+
     }
 
 
     if (checkRows(grid)) {
-        return <div className='draw'>{`${!player ? "X" : "O"} Wins!`}</div>
+        return (
+            <>
+                <div className='draw'>{`${!player ? "X" : "O"} Wins!`}</div>
+                <button onClick={() => setGrid(gridArray)}>Play Again?</button>
+            </>
+        )
     }
 
     if (checkColumns(grid)) {
-        return <div className='draw'>{`${!player ? "X" : "O"} Wins!`}</div>
+        return (
+            <>
+                <div className='draw'>{`${!player ? "X" : "O"} Wins!`}</div>
+                <button onClick={() => setGrid(gridArray)}>Play Again?</button>
+            </>
+        )
     }
 
     if (checkDiagonalWin(grid)) {
-        return <div className='draw'>{`${!player ? "X" : "O"} Wins!`}</div>
+        return (
+            <>
+                <div className='draw'>{`${!player ? "X" : "O"} Wins!`}</div>
+                <button onClick={() => setGrid(gridArray)}>Play Again?</button>
+            </>
+        )
     }
 
     return (
